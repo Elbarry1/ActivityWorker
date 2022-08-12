@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: postgres
+    password: qwerty
+    url: jdbc:postgresql://localhost:5432/weatherdb
+
+  jpa:
+    show-sql: true
+
+  flyway:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+
+server:
+  port: 8082
+
+openweathermap:
+  url: https://api.openweathermap.org
+  units: ${OPEN_WEATHER_MAP_UNITS:metric}
+  appid: ${OPEN_WEATHER_MAP_APPID:852604e049f6701419c93cf9ba93f9c1}
